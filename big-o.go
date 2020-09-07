@@ -3,11 +3,12 @@ package bigo
 import (
 	"fmt"
 	"reflect"
+	"strings"
 )
 
 func GetWorstToBest(str string) {
 	m := My{}
-	meth := reflect.ValueOf(m).MethodByName(str)
+	meth := reflect.ValueOf(m).MethodByName(strings.Title(strings.ToLower(str)))
 	meth.Call(nil)
 }
 
