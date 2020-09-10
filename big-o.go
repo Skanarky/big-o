@@ -32,7 +32,7 @@ func (m My) Bad() string {
 	return str
 }
 
-func (m My) OK() string {
+func (m My) Okay() string {
 	str := "An okay Big-O is O(n log(n))"
 	fmt.Println(str)
 	return str
