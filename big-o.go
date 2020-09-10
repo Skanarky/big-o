@@ -15,7 +15,7 @@ func GetWorstToBest(str string) (string, error) {
 		capStr != "Good" &&
 		capStr != "Better" &&
 		capStr != "Best" {
-		return "Error!", errors.New("No such method")
+		return "Error!", errors.New(("No such method: " + capStr))
 	}
 	m := My{}
 	meth := reflect.ValueOf(m).MethodByName(capStr)
