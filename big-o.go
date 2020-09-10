@@ -1,15 +1,26 @@
 package bigo
 
 import (
+	"errors"
 	"fmt"
 	"reflect"
 	"strings"
 )
 
-func GetWorstToBest(str string) {
+func GetWorstToBest(str string) (string, error) {
+	capStr := strings.Title(strings.ToLower(str))
+	if capStr != "Worst" &&
+		capStr != "Worse" &&
+		capStr != "Soso" &&
+		capStr != "Good" &&
+		capStr != "Better" &&
+		capStr != "Best" {
+		return "Error!", errors.New("No such method")
+	}
 	m := My{}
-	meth := reflect.ValueOf(m).MethodByName(strings.Title(strings.ToLower(str)))
+	meth := reflect.ValueOf(m).MethodByName(capStr)
 	meth.Call(nil)
+	return "Done!", nil
 }
 
 type My struct{}
