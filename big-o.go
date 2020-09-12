@@ -1,5 +1,7 @@
 package bigo
 
+// This package is for exercising purposes only
+
 import (
 	"errors"
 	"fmt"
@@ -23,53 +25,39 @@ func GetWorstToBest(str string) (string, error) {
 	return "Done!", nil
 }
 
-func (m My) Worst() string {
-	str := "The worst Big-O is O(n!)"
-	fmt.Println(str)
-	return str
+func (m My) Worst() {
+	fmt.Println("The worst Big-O is O(n!)")
 }
 
-func (m My) Worse() string {
-	str := "A worse Big-O is O(2^n)"
-	fmt.Println(str)
-	return str
+func (m My) Worse() {
+	fmt.Println("A worse Big-O is O(2^n)")
 }
 
-func (m My) Bad() string {
-	str := "A bad Big-O is O(n^2)"
-	fmt.Println(str)
-	return str
+func (m My) Bad() {
+	fmt.Println("A bad Big-O is O(n^2)")
 }
 
-func (m My) Soso() string {
-	str := "An okay Big-O is O(n log(n))"
-	fmt.Println(str)
-	return str
+func (m My) Soso() {
+	fmt.Println("An okay Big-O is O(n log(n))")
 }
 
-func (m My) Good() string {
-	str := "A good Big-O is O(n)"
-	fmt.Println(str)
-	return str
+func (m My) Good() {
+	fmt.Println("A good Big-O is O(n)")
 }
 
-func (m My) Better() string {
-	str := "A better Big-O is O(log(n))"
-	fmt.Println(str)
-	return str
+func (m My) Better() {
+	fmt.Println("A better Big-O is O(log(n))")
 }
 
-func (m My) Best() string {
-	str := "The best Big-O is O(1)"
-	fmt.Println(str)
-	return str
+func (m My) Best() {
+	fmt.Println("The best Big-O is O(1)")
 }
 
 func setMethodMap() {
 	methodMap = make(map[string]string)
 	methodMap["worst"] = "Worst"
 	methodMap["the worst"] = "Worst"
-	methodMap["wrse"] = "Worse"
+	methodMap["worse"] = "Worse"
 	methodMap["so so"] = "Soso"
 	methodMap["okay"] = "Soso"
 	methodMap["ok"] = "Soso"
