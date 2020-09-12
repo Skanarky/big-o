@@ -65,25 +65,25 @@ func (m My) Best() {
 }
 
 // ver II
-func Worst() string {
+func worst() string {
 	return "The worst Big-O is O(n!)"
 }
-func Worse() string {
+func worse() string {
 	return "A worse Big-O is O(2^n)"
 }
-func Bad() string {
+func bad() string {
 	return "A bad Big-O is O(n^2)"
 }
-func Soso() string {
+func soso() string {
 	return "An okay Big-O is O(n log(n))"
 }
-func Good() string {
+func good() string {
 	return "A good Big-O is O(n)"
 }
-func Better() string {
+func better() string {
 	return "A better Big-O is O(log(n))"
 }
-func Best() string {
+func best() string {
 	return "The best Big-O is O(1)"
 }
 
@@ -104,15 +104,15 @@ func setMethodMap() {
 
 	// ver II
 	methodMapWithActualMethods = make(map[string]func() string)
-	methodMapWithActualMethods["worst"] = Worst
-	methodMapWithActualMethods["the worst"] = Worst
-	methodMapWithActualMethods["worse"] = Worse
-	methodMapWithActualMethods["bad"] = Bad
-	methodMapWithActualMethods["so so"] = Soso
-	methodMapWithActualMethods["okay"] = Soso
-	methodMapWithActualMethods["ok"] = Soso
-	methodMapWithActualMethods["good"] = Good
-	methodMapWithActualMethods["better"] = Better
-	methodMapWithActualMethods["best"] = Best
-	methodMapWithActualMethods["the best"] = Best
+	methodMapWithActualMethods["worst"] = worst
+	methodMapWithActualMethods["the worst"] = worst
+	methodMapWithActualMethods["worse"] = worse
+	methodMapWithActualMethods["bad"] = bad
+	methodMapWithActualMethods["so so"] = soso
+	methodMapWithActualMethods["okay"] = soso
+	methodMapWithActualMethods["ok"] = soso
+	methodMapWithActualMethods["good"] = good
+	methodMapWithActualMethods["better"] = better
+	methodMapWithActualMethods["best"] = best
+	methodMapWithActualMethods["the best"] = best
 }
