@@ -7,23 +7,21 @@ import (
 	"strings"
 )
 
+type My struct{}
+
+var methodMap map[string]string
+
 func GetWorstToBest(str string) (string, error) {
-	capStr := strings.Title(strings.ToLower(str))
-	if capStr != "Worst" &&
-		capStr != "Worse" &&
-		capStr != "Soso" &&
-		capStr != "Good" &&
-		capStr != "Better" &&
-		capStr != "Best" {
-		return "Error!", errors.New(("No such method: " + capStr))
+	lwrStr := strings.ToLower(str)
+	setMethodMap()
+	if methodMap[lwrStr] == "" {
+		return "Error!", errors.New(("No such method: " + strings.Title(lwrStr)))
 	}
 	m := My{}
-	meth := reflect.ValueOf(m).MethodByName(capStr)
+	meth := reflect.ValueOf(m).MethodByName(methodMap[lwrStr])
 	meth.Call(nil)
 	return "Done!", nil
 }
-
-type My struct{}
 
 func (m My) Worst() string {
 	str := "The worst Big-O is O(n!)"
@@ -65,4 +63,18 @@ func (m My) Best() string {
 	str := "The best Big-O is O(1)"
 	fmt.Println(str)
 	return str
+}
+
+func setMethodMap() {
+	methodMap = make(map[string]string)
+	methodMap["worst"] = "Worst"
+	methodMap["the worst"] = "Worst"
+	methodMap["wrse"] = "Worse"
+	methodMap["so so"] = "Soso"
+	methodMap["okay"] = "Soso"
+	methodMap["ok"] = "Soso"
+	methodMap["good"] = "Good"
+	methodMap["better"] = "Better"
+	methodMap["best"] = "Best"
+	methodMap["the best"] = "Best"
 }
